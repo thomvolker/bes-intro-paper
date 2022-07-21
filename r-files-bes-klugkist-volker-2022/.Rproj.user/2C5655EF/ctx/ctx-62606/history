@@ -1,0 +1,232 @@
+install.packages("tinytex")
+tinytex::install_tinytex()
+getwd()
+tinytex::xelatex("../bes_intro_paper")
+tinytex::xelatex("../bes_intro_paper.tex")
+tinytex::lualatex("../bes_intro_paper.tex")
+tinytex::reinstall_tinytex()
+tinytex::reinstall_tinytex()
+tinytex::install_tinytex()
+tinytex::reinstall_tinytex()
+tinytex::xelatex("../bes_intro_paper.tex")
+tinytex::check_installed("biblatex")
+setwd("..")
+getwd()
+setwd("C:/Users/5868777/surfdrive/Shared/BES intro paper")
+set.seed(123)
+df <- tibble::tibble(x1 = rnorm(100),
+x2 = rnorm(100),
+x3 = rnorm(100),
+y  = x1 + x2 + x3 + rnorm(100, 0, 3))
+fit <- lm(y ~ x1 + x2 + x3, df)
+summary(fit)
+library(bain)
+install.packages("bain")
+library(bain)
+bain(fit, hypothesis = "x1=x3 < x2")
+install.packages("BFpack")
+library(BFpack)
+BF(fit, hypothesis = "x1 = x3 < x2")
+BFobj <- BF(fit, hypothesis = "x1 = x3 < x2")
+BFobj$BFmatrix_confirmatory
+BFobj$BFtu_exploratory
+BFobj %>% summary()
+summary(BFobj)
+bain(fit, hypothesis = "x1=x3 < x2")
+bain(fit, hypothesis = "x1=x3")
+.58 / (1 - .58)
+(.58 / (1 - .58))
+(.58 / (1 - .58)) * (.69 / (1 - .69))
+(.58 / (1 - .58)) * (.69 / (1 - .69)) * (.54 / (1 - .54))
+3.6 / 4.6
+B <- c(1,1,1,2,3)
+G <- rep(1, length(B))
+Sigma <- diag(length(B))
+Sigma[Sigma==0] <- 0.3
+VarY <- 0.25
+B * sqrt(VarY / t(G) %*% (B %*% t(B) %*% Sigma) %*% G)
+sqrt(VarY / t(G) %*% (B %*% t(B) %*% Sigma) %*% G)
+B * sqrt(VarY / t(G) %*% (B %*% t(B) %*% Sigma) %*% G)
+B * c(sqrt(VarY / t(G) %*% (B %*% t(B) %*% Sigma) %*% G))
+knitr::opts_chunk$set(echo = TRUE)
+## Set seed
+set.seed(123)
+# Load packages
+library(tidyverse)
+library(magrittr)
+library(furrr)
+library(BFpack)
+library(Rcpp)
+library(RcppArmadillo)
+# devtools::build("DataCpp")
+# devtools::install("DataCpp")
+library(DataCpp)
+source("functions.R")
+## Number of simulations
+nsim <- 1000
+## Sample sizes
+n <- 50 * 2^{0:4}
+## Models
+models <- c("normal", "logit", "probit")
+## r2 of the regression model
+r2 <- c(.02, .09, .25)
+## Specify relative importance of the regression coefficients
+ratio_beta <- c(1,1,1,2,3)
+## Specify the bivariate correlations between predictors
+pcor <- c(0.3)
+gen_dat(0.25,
+coefs(0.25, ratio_beta, cormat(pcor, length(ratio_beta)), "normal"),
+cormat(pcor, length(ratio_beta)),
+100000,
+"normal") %$%
+lm(Y ~ V1 + V2 + V3 + V4 + V5) %>%
+summary()
+B * sqrt(VarY / (t(G) %*% (B %*% t(B)) * Sigma) %*% t(G)
+)
+sqrt(VarY / (t(G) %*% (B %*% t(B)) * Sigma) %*% t(G))
+t(G)
+t(G) %*% ((B %*% t(B)))
+t(G) %*% ((B %*% t(B)) * Sigma)
+t(G) %*% ((B %*% t(B)) * Sigma) %*% t(G)
+t(G) %*% ((B %*% t(B)) * Sigma) %*% G
+B * c(sqrt(VarY / (t(G) %*% ((B %*% t(B)) * Sigma) %*% G)))
+B * c(sqrt(VarY / (t(G) %*% ((B %*% t(B)) * Sigma) %*% G)))
+B * sqrt(VarY / sum(B %*% t(B) * Sigma))
+B %*% t(B)
+B * sqrt(VarY / (sum(B^2 * diag(Sigma)) + sum(2 * B * 0.3)))
+for (i in 1:(length(B)-1) {
+for (j in (min(i+1, length(B)):length(B))) {
+B[i] * B[j]
+}
+}
+for (i in 1:(length(B)-1) {
+for (j in (min(i+1, length(B)):length(B))) {
+B[i] * B[j]
+}
+}
+for (i in 1:(length(B)-1)) {
+for (j in (min(i+1, length(B)):length(B))) {
+B[i] * B[j]
+}
+}
+for (i in 1:(length(B)-1)) {
+for (j in (min(i+1, length(B)):length(B))) {
+print(B[i] * B[j])
+}
+}
+X <- numeric(0)
+X
+for (i in 1:(length(B)-1)) {
+for (j in (min(i+1, length(B)):length(B))) {
+X[length(X) + 1] <- B[i] * B[j]
+}
+}
+X
+B * sqrt(VarY / (sum(B^2 * diag(Sigma)) + sum(X * 0.3)))
+B * sqrt(VarY / (sum(B^2 * diag(Sigma)) + sum(2 * X * 0.3)))
+## Set seed
+set.seed(123)
+# Load packages
+library(tidyverse)
+library(magrittr)
+library(furrr)
+library(BFpack)
+library(Rcpp)
+library(RcppArmadillo)
+# devtools::build("DataCpp")
+# devtools::install("DataCpp")
+library(DataCpp)
+source("functions.R")
+## Sample sizes
+n <- 50 * 2^{0:4}
+## Models
+models <- c("normal", "logit", "probit")
+## r2 of the regression model
+r2 <- c(.02, .09, .25)
+## Specify relative importance of the regression coefficients
+ratio_beta <- c(1,1,1,2,3)
+## Specify the bivariate correlations between predictors
+pcor <- c(0.3)
+## Number of simulations
+nsim <- 1000
+gen_dat(0.02,
+coefs(0.02, ratio_beta, cormat(pcor, length(ratio_beta)), "normal"),
+cormat(pcor, length(ratio_beta)),
+100000,
+"normal") %$%
+lm(Y ~ V1 + V2 + V3 + V4 + V5) %>%
+summary()
+gen_dat(0.25,
+coefs(0.02, ratio_beta, cormat(pcor, length(ratio_beta)), "normal"),
+cormat(pcor, length(ratio_beta)),
+100000,
+"normal") %$%
+lm(Y ~ V1 + V2 + V3 + V4 + V5) %>%
+summary()
+gen_dat(0.25,
+coefs(0.25, ratio_beta, cormat(pcor, length(ratio_beta)), "normal"),
+cormat(pcor, length(ratio_beta)),
+100000,
+"normal") %$%
+lm(Y ~ V1 + V2 + V3 + V4 + V5) %>%
+summary()
+coefs <- function(r2, ratio, rho, model = c("normal", "logit", "probit")) {
+# variance of predicted values (Var(yhat))
+if (model == "normal") {
+var_y <- r2
+}
+else if (model == "logit") {
+var_y <- (r2 * pi^2 / 3) / (1 - r2)
+}
+else if (model == "probit") {
+var_y <- r2 / (1 - r2)
+}
+G <- rep(1, length(ratio))
+# value of the regression coefficients
+ratio * sqrt(c(var_y / (t(G) %*% (ratio %*% t(ratio) * rho) %*% G)))
+}
+gen_dat(0.02,
+coefs(0.02, ratio_beta, cormat(pcor, length(ratio_beta)), "normal"),
+cormat(pcor, length(ratio_beta)),
+100000,
+"normal") %$%
+lm(Y ~ V1 + V2 + V3 + V4 + V5) %>%
+summary()
+coefs(0.02, ratio_beta, cormat(pcor, length(ratio_beta)), "normal")
+gen_dat(0.09,
+coefs(0.09, ratio_beta, cormat(pcor, length(ratio_beta)), "logit"),
+cormat(pcor, length(ratio_beta)),
+100000,
+"logit") %$%
+glm(Y ~ V1 + V2 + V3 + V4 + V5, family = binomial(link = "logit")) %T>%
+{performance::r2_mckelvey(.) %>% print()} %>%
+summary()
+coefs(0.09, ratio_beta, cormat(pcor, length(ratio_beta)), "logit")
+gen_dat(0.25,
+coefs(0.25, ratio_beta, cormat(pcor, length(ratio_beta)), "probit"),
+cormat(pcor, length(ratio_beta)),
+100000,
+"probit") %$%
+glm(Y ~ V1 + V2 + V3, family = binomial(link = "probit")) %T>%
+{performance::r2_mckelvey(.) %>% print()} %>%
+summary()
+coefs(0.25, ratio_beta, cormat(pcor, length(ratio_beta)), "probit")
+gen_dat(0.25,
+coefs(0.25, ratio_beta, cormat(pcor, length(ratio_beta)), "probit"),
+cormat(pcor, length(ratio_beta)),
+100000,
+"probit") %$%
+glm(Y ~ V1 + V2 + V3 + V4 + V5, family = binomial(link = "probit")) %T>%
+{performance::r2_mckelvey(.) %>% print()} %>%
+summary()
+coefs(0.25, ratio_beta, cormat(pcor, length(ratio_beta)), "probit")
+gen_dat(0.25,
+coefs(0.25, ratio_beta, cormat(pcor, length(ratio_beta)), "probit"),
+cormat(pcor, length(ratio_beta)),
+100000,
+"probit") %$%
+glm(Y ~ V1 + V2 + V3 + V4 + V5, family = binomial(link = "probit")) %T>%
+{performance::r2_mckelvey(.) %>% print()} %>%
+summary()
+coefs(0.25, ratio_beta, cormat(pcor, length(ratio_beta)), "probit")
+plan(sequential)

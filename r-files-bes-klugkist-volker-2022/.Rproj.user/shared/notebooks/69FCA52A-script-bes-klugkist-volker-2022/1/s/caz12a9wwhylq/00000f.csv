@@ -1,0 +1,5 @@
+"0","## Parallel processing"
+"0","plan(multisession)"
+"0",""
+"0","## Parallel seed"
+"0","options <- furrr_options(seed = TRUE)"

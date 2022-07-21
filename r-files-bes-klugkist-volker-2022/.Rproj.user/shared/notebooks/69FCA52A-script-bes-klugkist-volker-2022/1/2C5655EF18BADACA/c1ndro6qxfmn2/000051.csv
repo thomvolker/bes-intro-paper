@@ -1,0 +1,43 @@
+"0","full_join(sim12, summ_sim12) %>%
+  ungroup() %>%
+  filter(r2 == ""R^2: 0.02"" | r2 == ""R^2: 0.25"",
+         n %in% c(50, 200, 800)) %>%
+  mutate(pmp_iu = bf_iu / (bf_iu + 1),
+         pmp_ic = bf_iu / (bf_iu + bf_cu),
+         model = factor(model,
+                        levels = c(""normal"", ""logit"", ""probit"", ""Aggregated""),
+                        labels = c(""OLS"", ""Logistic"", ""Probit"", ""Aggregated""))) %>%
+  group_by(Simulation, r2, n, model) %>%
+  summarize(PMP_median = median(pmp_ic)) %>%
+  pivot_wider(names_from = model, values_from = PMP_median) %>%
+  xtable::xtable()
+"
+"1","[38;5;252mJoining, by = c(""Simulation"", ""nsim"", ""n"", ""r2"", ""model"", ""bf_iu"", ""bf_cu"", ""bf_ic"")[39m
+"
+"1","[38;5;252m`summarise()` has grouped output by 'Simulation', 'r2', 'n'. You can override using
+the `.groups` argument.[39m
+"
+"1","% latex table generated in R 4.2.1 by xtable 1.8-4 package
+% Tue Jul 19 00:31:55 2022
+\begin{table}[ht]
+\centering
+\begin{tabular}{rllrrrrr}
+  \hline
+ & Simulation & r2 & n & OLS & Logistic & Probit & Aggregated \\ 
+  \hline
+1 & 1 & R\verb|^|2: 0.02 & 50.00 & 0.44 & 0.40 & 0.39 & 0.23 \\ 
+  2 & 1 & R\verb|^|2: 0.02 & 200.00 & 0.57 & 0.52 & 0.52 & 0.47 \\ 
+  3 & 1 & R\verb|^|2: 0.02 & 800.00 & 0.65 & 0.69 & 0.61 & 0.78 \\ 
+  4 & 1 & R\verb|^|2: 0.25 & 50.00 & 0.66 & 0.56 & 0.54 & 0.64 \\ 
+  5 & 1 & R\verb|^|2: 0.25 & 200.00 & 0.82 & 0.79 & 0.75 & 0.98 \\ 
+  6 & 1 & R\verb|^|2: 0.25 & 800.00 & 0.95 & 0.93 & 0.92 & 1.00 \\ 
+  7 & 2 & R\verb|^|2: 0.02 & 50.00 & 0.46 & 0.61 & 0.47 & 0.50 \\ 
+  8 & 2 & R\verb|^|2: 0.02 & 200.00 & 0.58 & 0.74 & 0.56 & 0.80 \\ 
+  9 & 2 & R\verb|^|2: 0.02 & 800.00 & 0.75 & 0.89 & 0.72 & 0.98 \\ 
+  10 & 2 & R\verb|^|2: 0.25 & 50.00 & 0.74 & 0.86 & 0.65 & 0.97 \\ 
+  11 & 2 & R\verb|^|2: 0.25 & 200.00 & 0.93 & 0.99 & 0.87 & 1.00 \\ 
+  12 & 2 & R\verb|^|2: 0.25 & 800.00 & 1.00 & 1.00 & 0.98 & 1.00 \\ 
+   \hline
+\end{tabular}
+\end{table}
+"

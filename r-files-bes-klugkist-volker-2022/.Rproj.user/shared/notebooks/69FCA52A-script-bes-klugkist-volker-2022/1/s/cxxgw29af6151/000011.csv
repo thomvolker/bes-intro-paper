@@ -1,0 +1,7 @@
+"0",""
+"0","if (params$save) ggsave(filename = ""Figures/bes_bsu_7_Hi0_pmp.pdf"", "
+"0","                        plot = bes_bsu_7_Hi0_pmp, "
+"0","                        device = cairo_pdf, "
+"0","                        dpi = 1000)"
+"2","Saving 7.29 x 4.5 in image
+"

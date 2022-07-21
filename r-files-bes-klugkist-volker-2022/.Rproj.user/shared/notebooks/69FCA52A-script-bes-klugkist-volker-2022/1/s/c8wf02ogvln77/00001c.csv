@@ -1,0 +1,32 @@
+"0","xtable(betas, 
+       auto = TRUE,
+       caption = c(""Population-level regression coefficients for ordinary least squares (OLS), logistic and probit regression, given effect sizes of $R^2 \\in \\{0.02, 0.09, 0.25\\}$.""),
+       label = c(""coefs"")) %>%
+  print(sanitize.text.function = function(x) {x},
+        include.rownames = FALSE,
+        include.colnames = FALSE,
+        add.to.row = addtorow,
+        booktabs = TRUE,
+        hline.after = c(-1, 0, 1, nrow(.)),
+        caption.placement = ""top"",
+        table.placement = ""t"")
+"
+"1","% latex table generated in R 4.2.1 by xtable 1.8-4 package
+% Tue Jul 19 13:26:06 2022
+\begin{table}[t]
+\centering
+\caption{Population-level regression coefficients for ordinary least squares (OLS), logistic and probit regression, given effect sizes of $R^2 \in \{0.02, 0.09, 0.25\}$.} 
+\label{coefs}
+\begin{tabular}{lllllllllllll}
+  \toprule
+  $R^2$ & & \multicolumn{3}{c}{OLS} & & \multicolumn{3}{c}{Logistic} & & \multicolumn{3}{c}{Probit} \\
+ \midrule
+  &   & $\beta_{1, 2, 3}$ & $\beta_4$ & $\beta_5$ &   & $\beta_{1, 2, 3}$ & $\beta_4$ & $\beta_5$ &   & $\beta_{1, 2, 3}$ & $\beta_4$ & $\beta_5$ \\ 
+   \midrule
+0.02 &   & 0.026 & 0.051 & 0.077 &   & 0.047 & 0.094 & 0.141 &   & 0.026 & 0.052 & 0.078 \\ 
+  0.09 &   & 0.054 & 0.109 & 0.163 &   & 0.103 & 0.207 & 0.310 &   & 0.057 & 0.114 & 0.171 \\ 
+  0.25 &   & 0.091 & 0.181 & 0.272 &   & 0.190 & 0.380 & 0.570 &   & 0.105 & 0.209 & 0.314 \\ 
+   \bottomrule
+\end{tabular}
+\end{table}
+"

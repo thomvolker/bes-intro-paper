@@ -1,0 +1,5 @@
+"0",""
+"0","if (params$save) {ggsave(filename = ""Figures/betaplot.pdf"", "
+"0","                         beta_plot, device = cairo_pdf, dpi = 1000)}"
+"2","Saving 7.29 x 4.5 in image
+"
