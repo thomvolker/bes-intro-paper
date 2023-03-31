@@ -1,19 +1,49 @@
-[0] Config.pm:306> INFO - This is Biber 2.18
-[0] Config.pm:309> INFO - Logfile is 'bes_intro_paper.blg'
-[117] biber-MSWIN64:340> INFO - === 
-[171] Biber.pm:418> INFO - Reading 'bes_intro_paper.bcf'
-[303] Biber.pm:978> INFO - Found 63 citekeys in bib section 0
-[322] Biber.pm:4401> INFO - Processing section 0
-[340] Biber.pm:4592> INFO - Looking for bibtex file 'bes.bib' for section 0
-[426] bibtex.pm:1713> INFO - LaTeX decoding ...
-[518] bibtex.pm:1518> INFO - Found BibTeX data source 'bes.bib'
-[967] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[968] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[968] Biber.pm:4221> INFO - Sorting list 'apa/apasortcite//global/global' of type 'entry' with template 'apa' and locale 'en-US'
-[968] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
-[1108] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1108] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1109] Biber.pm:4221> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
-[1109] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
-[1201] bbl.pm:654> INFO - Writing 'bes_intro_paper.bbl' with encoding 'UTF-8'
-[1324] bbl.pm:757> INFO - Output to bes_intro_paper.bbl
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: bes_intro_paper.aux
+The style file: apalike.bst
+Database file #1: bes.bib
+Warning--entry type for "klugkist_bes_materials" isn't style-file defined
+--line 867 of file bes.bib
+You've used 72 entries,
+            1935 wiz_defined-function locations,
+            886 strings with 19952 characters,
+and the built_in function-call counts, 31531 in all, are:
+= -- 2943
+> -- 1720
+< -- 33
++ -- 638
+- -- 606
+* -- 2863
+:= -- 5645
+add.period$ -- 220
+call.type$ -- 72
+change.case$ -- 654
+chr.to.int$ -- 70
+cite$ -- 72
+duplicate$ -- 1006
+empty$ -- 1959
+format.name$ -- 710
+if$ -- 6015
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 73
+newline$ -- 365
+num.names$ -- 218
+pop$ -- 532
+preamble$ -- 1
+purify$ -- 662
+quote$ -- 0
+skip$ -- 754
+stack$ -- 0
+substring$ -- 2039
+swap$ -- 85
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 418
+warning$ -- 0
+while$ -- 214
+width$ -- 0
+write$ -- 938
+(There was 1 warning)
